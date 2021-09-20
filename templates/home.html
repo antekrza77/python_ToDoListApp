@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Home</h1>
+
+
+    {% for dana in dane %}  <!-- zmiana taks -->
+    <ol>
+        <li>{{ dana.imie }} {{ dana.nazwisko }}</li>
+    </ol>
+    {% endfor %}
+
+    <div class="form">
+       <form action="/home" method="POST">   <!--  usnuąć action /home? -->
+            Imie:<input type="text" name="imie" id="imie">
+            Nazwisko:<input type="text" name="nazwisko" id="nazwisko"><br />
+            <input type="submit" name="dodaj" value="Dodaj uzytkownika">
+        </form>
+    </div>
+</div>
+{% endblock %}
